@@ -1,10 +1,11 @@
-const nameInput = document.getElementById("name-input");
-const nameOutput = document.getElementById("name-output");
-
-input.oninput = function () {
-  if (input.value === "") {
-    nameOutput.innerHTML = "Anonymous";
-  } else {
-    nameOutput.innerHTML = input.value;
-  }
-};
+const nameInput = document.querySelector('#name-input');
+const nameOutput = document.querySelector('#name-output');
+nameInput.addEventListener('input', oninput);
+function oninput(event) {
+   event.preventDefault();
+   nameOutput.textContent = event.target.value;
+   if (event.target.value === "") {
+        nameOutput.textContent = "Anonymous";
+   }
+   return nameOutput.textContent;
+ }
