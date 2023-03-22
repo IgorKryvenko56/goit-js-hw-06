@@ -8,7 +8,6 @@ items.forEach((element) => {
   console.log(elementTitle);
   console.log(titleElemntsQty);
 });
-
 // Category: Animals
 // Elements: 4
 
