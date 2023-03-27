@@ -6,15 +6,17 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-//Достаем каждый елемент массива по id
-const ingredientsList = document.getElementById("ingredients");
+ //Достаем каждый елемент массива по id
+ const ingredientsList = document.getElementById("ingredients");
 
 // Создаем каждый новый <li> element с text content и добавляем item class
-ingredients.forEach((ingredient) => {
-  const newIngredient = document.createElement("li");
-  newIngredient.textContent = ingredient;
-  newIngredient.classList.add("item");
-  
+ const ingredientList = ingredients.map((ingredient) => {
+    const newIngredient = document.createElement("li");
+    newIngredient.textContent = ingredient;
+    newIngredient.classList.add("item");
+    return newIngredient;
+  });
   // Добавляем новый <li> element в <ul> 
-  ingredientsList.appendChild(newIngredient);
-});
+    ingredientsList.append(...ingredientList);
+
+ 
